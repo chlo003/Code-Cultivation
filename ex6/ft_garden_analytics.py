@@ -12,7 +12,7 @@ class Plant:
         return age > 365
 
     @classmethod
-    def anonymous(cls) -> Plant:
+    def create(cls) -> Plant:
         return cls("Unknown plant", 0.0, 0)
 
 
@@ -30,6 +30,8 @@ class Flower(Plant):
         print("[asking the rose to bloom]")
         self.show()
         print(f"{self.name} is blooming beautifully!")
+
+    class nested():
 
 
 class Tree(Plant):
@@ -49,18 +51,24 @@ class Tree(Plant):
 
 
 class Seed(Flower):
-    def __init__(self, name, height, age, color):
+    def __init__(self, name: str, height: float, age: int, color: str):
         super().__init__(name, height, age, color)
 
     def show(self) -> None:
         super().show()
         print()
+        print()
+
+
+def ft_show_stats() -> None:
+    print(f"[statistics for {self.name}]")
+    print(f"Stats: {} grow, {} age, {} show")
     
 
 if __name__ == "__main__":
     print("=== Garden statistics ===")
     print("=== Check year-old")
-
+    print()
     print("=== Flower")
     rose = Flower("Rose", 15.0, 10, "red")
     rose.show()
